@@ -17,6 +17,9 @@
     <% else %>
     <%= link_to "Signout", destroy_user_session_path, method: :delete %>
     Signed in as: <%= current_user.email %>
+    <% if current_user.name %>
+    <%= current_user.name %>
+    <% end %>
     <% end %>
     <% if notice %>
     <div class="alert alert-success alert-dismissible" role="alert">
