@@ -18,6 +18,24 @@
     <%= link_to "Signout", destroy_user_session_path, method: :delete %>
     Signed in as: <%= current_user.email %>
     <% end %>
+    <% if notice %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">close</span>
+      </button>
+      <%= notice %>
+     </div>
+     <% end %>
+     <% if alert %>
+<div class="alert alert-danger alert-dismissible" role="alert">
+ <button type="button" class="close" data-dismiss="alert">
+   <span aria-hidden="true">&times;</span>
+   <span class="sr-only">close</span>
+ </button>
+ <%= alert %>
+</div>
+<% end %>
     <%= yield %>
   </body>
 </html>
